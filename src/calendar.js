@@ -87,13 +87,23 @@ var calendarLinkFunction = function (scope, element) {
     }
 
     // month between 1 ~ 12
-    var getDateContent = function(year,month,date){            
-        if(contentObj != null && contentObj[year] != null && 
-            contentObj[year][month] != null && 
-            contentObj[year][month][date] != null){
-            return contentObj[year][month][date].join("<br/>");    
-        }         
-        return "";
+    /**
+     * GetDate Content
+     * @param  {Object}  Date to look for
+     * @return {String}  If an event is found is returned otherwise a blank
+     */
+    var getDateContent = function(year, month, day){  
+        var date = moment({year:year,month:month,day:day}),
+            out = '';
+
+        angular.forEach(contentObj, function(val, i){
+            if(date.isSame(val.date)){
+                out = val.label;
+                return
+            }
+        })
+
+        return out;
     }
 
     // month between 1 ~ 12

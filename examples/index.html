@@ -92,15 +92,20 @@
 
       <div class="heightlight">
         <h3 class="lead">Example: Injecting some content</h3>
-        <p>
-          $scope.calendarContent = <br/>
-            {"2013":{"8":{"29":  <br/>
-            &nbsp;&nbsp;&nbsp;&nbsp;["Google it:&lt;a href=\"http://google.com\" target="_blank" &gt;  Open Tab &lt;/a&gt;"]<br/>
-          }}]);<br/>          
-          <code>
-            &lt;calendar calendar-content="calendarContent" calendar-month="8" calendar-year="2013"&gt;&lt;/calendar&gt;
+        <pre>
+          <code>    
+var MainCtrl = function($scope) {
+$scope.calendarContent = [
+    {
+      date: "2013-08-29",
+      label: "Google it: &lt;a href=\"http://google.com\" target=\"_blank\"&gt;Open Tab&lt;/a&gt;"
+    }
+  ];    
+}
+
+&lt;calendar calendar-content="calendarContent" calendar-month="8" calendar-year="2013"&gt;&lt;/calendar&gt;
           </code>
-        </p>
+        </pre>
         <div class="well">
           <calendar calendar-month="8" calendar-year="2013" calendar-content="calendarContent" ></calendar>      
         </div>
@@ -115,18 +120,12 @@
     var app = angular.module('calendarApp', ['simpleCalendar']);
 
     var MainCtrl = function($scope) {
-      $scope.calendarContent = {
-        "2013":
+      $scope.calendarContent = [
         {
-          "8":
-          {
-            "29":
-            [
-              "Google it: <a href=\"http://google.com\" target=\"_blank\">Open Tab</a>"
-            ]
-          }
+          date: "2013-08-29",
+          label: "Google it: <a href=\"http://google.com\" target=\"_blank\">Open Tab</a>"
         }
-      };    
+      ];    
     }
   </script>
 
