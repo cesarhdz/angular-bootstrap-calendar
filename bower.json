@@ -3,9 +3,10 @@
   "version": "1.0.0",
   "main": "",
   "dependencies": {
-    "angular": "~1.2.5"
+    "angular": "~1.2.5",
+    "moment": "~2.7.0"
   },
-  "devDependencies":{
+  "devDependencies": {
     "angular-mocks": "1.0.7"
   }
 }
