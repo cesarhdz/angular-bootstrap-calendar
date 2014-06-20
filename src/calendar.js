@@ -120,8 +120,8 @@ var calendarLinkFunction = function (scope, element) {
 
         //first week row
         monthArray.push(weekGenegrator(year , month , recordDate-firstDayInFirstweek ,daysOfMonth , prevDaysOfMonth));
-
         recordDate = 7 - firstDayInFirstweek;
+
         //loop for following week row
         while(recordDate < daysOfMonth-1){
             monthArray.push(weekGenegrator(year , month , recordDate , daysOfMonth));
@@ -150,17 +150,17 @@ var calendarLinkFunction = function (scope, element) {
             if(startDate + i < 0){
                 realDate = prevDaysOfMonth+startDate+i+1;
                 outmonth = true;
+                content = getDateContent(year, month - 1, realDate);
             }
             else if(startDate + i + 1 > daysOfMonth){
                 realDate = startDate+i-daysOfMonth+1;
                 outmonth = true;
+                content = getDateContent(year, month + 1, realDate);
             }
             else{
                 realDate =  startDate+i+1;
+                content = getDateContent(year, month, realDate);
             }
-
-            content = getDateContent(year , month , realDate);
-
 
             week.push({
                 "outmonth" : outmonth,
