@@ -157,6 +157,13 @@ app.directive("calendar", function(){
             scope.month = monthGenegrator(scope.currentDate.getMonth()+1, scope.currentDate.getFullYear());
         }
 
+        /**
+         * @usage $rootScope.$broadcast('calendarRefresh')
+         */
+        scope.$on('calendarRefresh', function(){
+            refreshCalendar()
+        })
+
         // Allow events to be promises
         refreshCalendar();
     }
