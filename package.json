@@ -2,6 +2,8 @@
   "name": "Angular_Bootstrap_Calendar",
   "version": "0.0.1",
   "dependencies": {
+  },
+  "devDependencies": {
     "karma-script-launcher": "~0.1.0",
     "karma-firefox-launcher": "~0.1.0",
     "karma-chrome-launcher": "~0.1.0",        
@@ -9,9 +11,7 @@
     "karma-phantomjs-launcher": "~0.1.0",
     "karma": "~0.10.1",
     "grunt-karma": "~0.6.1",
-    "karma-html2js-preprocessor": "*"
-  },
-  "devDependencies": {
+    "karma-html2js-preprocessor": "*",
     "grunt": "~0.4.1",
     "grunt-contrib-copy": "~0.4.1",
     "grunt-contrib-concat": "~0.3.0",    
